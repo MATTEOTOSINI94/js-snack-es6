@@ -24,6 +24,19 @@ const sellBike =
 ]
 const cardContainer = document.querySelector(".card-container")
 
+// function getlower(bikesList) {
+//     // ORDINARE ARRAY PER PESO IN ORDINE CRESCENTE CON SORT
+//     const sortedArray =[...sellBike].sort((a,b)=>{
+//         if(a.peso < b.peso){
+//             return - 1
+//         }
+
+//         if (condition) {
+            
+//         }
+//     })
+// }
+
 let eavyBike = sellBike[0]
 
 for (let x = 0; x < sellBike.length; x++) {
@@ -58,6 +71,9 @@ cardContainer.innerHTML+=
 // Punti fatti e falli subiti.
 // Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 
+
+
+// creo un array di oggetti composta da squadre di calcio ogni squadra ha diverse proprietà falli e cartellini sono settati a zero
 const footballTeam =
 [
         { nome: "AC.Milan",
@@ -76,30 +92,34 @@ const footballTeam =
     }
 ]
 
-
+//  creo un ciclo for per poter reimpostare a ciascuna squadra il valore dei falli e dei cartellini
 for (let x = 0; x < footballTeam.length; x++) {
-    const singolaSquadra = footballTeam[x];
 
+    const singolaSquadra = footballTeam[x];
+    // assegno un valore random da uno a 100 ai falli e cartellini
     singolaSquadra.falli =  Math.round(Math.random() * 100);
     singolaSquadra.cartellini =  Math.round(Math.random() * 100);
-    
-
 }
 
 console.log(footballTeam)
 
 
-
+// creo una funzione dove all'interno avro un oggetto vuoto
 function array(footballTeam) {
 
-    let arrayVuoto ={}
+    let arrayVuoto =[]
+    // vado a ciclare ogni elemento del mio array di oggetti
     for (let a = 0; a < footballTeam.length; a++) {
+        
         const {nome, cartellini} = footballTeam[a];
 
-        if (!arrayVuoto[nome]) {
-            arrayVuoto[nome]=[]  
-        }
-        arrayVuoto[nome].push({nome,cartellini})
+        // arrayVuoto.nome = nome
+        // arrayVuoto.cartellini =cartellini
+
+        // if (!arrayVuoto[nome]) {
+        //     arrayVuoto[nome]=[]  
+        // }
+        arrayVuoto.push({nome,cartellini})
 
     }
 
@@ -115,39 +135,3 @@ function array(footballTeam) {
 
 
 
-
-
-    // const {peso} = bike
-    // console.log(peso)
-
-    
-
-
-    
-//    const largest = Math.max.apply(Math, arrayPeso);
-   
-//    console.log(largest)
-// function bici(sellBike) {
-
-//     const pesoBike = {}
-
-//     for (let a = 0; a < sellBike.length; a++) {
-//         const {peso} = sellBike[a];
-
-//     if (!pesoBike[peso]) {
-//         pesoBike[peso]=[]
-//     }
-
-//        pesoBike[peso].push(sellBike[a])
-        
-//     }
-//     console.log(pesoBike)
-
-// }
-
-// bici(sellBike)
-// console.log(bici(sellBike))
-
-// const largest = Math.max.apply(sellBike); // 306
-
-// console.log(largest)
